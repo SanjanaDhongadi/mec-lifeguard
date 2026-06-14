@@ -1,0 +1,122 @@
+# MEC-LifeGuard — Docker Compose
+# Starts 3 identical edge node containers on different host ports.
+# All 3 read from the same mobility_state.json via a shared bind mount.
+#
+# Usage:
+#   docker compose up --build        # first time
+#   docker compose up                # subsequent runs
+#   docker compose down              # stop and remove containers
+
+version: "3.9"
+
+services:
+
+  edge-node-1:
+    build: ./edge_node
+    container_name: edge-node-1
+    environment:
+      - NODE_ID=node1
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-2:
+    build: ./edge_node
+    container_name: edge-node-2
+    environment:
+      - NODE_ID=node2
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-3:
+    build: ./edge_node
+    container_name: edge-node-3
+    environment:
+      - NODE_ID=node3
+    ports:
+      - "5003:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-4:
+    build: ./edge_node
+    container_name: edge-node-4
+    environment:
+      - NODE_ID=node4
+    ports:
+      - "5004:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-5:
+    build: ./edge_node
+    container_name: edge-node-5
+    environment:
+      - NODE_ID=node5
+    ports:
+      - "5005:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-6:
+    build: ./edge_node
+    container_name: edge-node-6
+    environment:
+      - NODE_ID=node6
+    ports:
+      - "5006:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-7:
+    build: ./edge_node
+    container_name: edge-node-7
+    environment:
+      - NODE_ID=node7
+    ports:
+      - "5007:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-8:
+    build: ./edge_node
+    container_name: edge-node-8
+    environment:
+      - NODE_ID=node8
+    ports:
+      - "5008:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-9:
+    build: ./edge_node
+    container_name: edge-node-9
+    environment:
+      - NODE_ID=node9
+    ports:
+      - "5009:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
+
+  edge-node-10:
+    build: ./edge_node
+    container_name: edge-node-10
+    environment:
+      - NODE_ID=node10
+    ports:
+      - "5010:5000"
+    volumes:
+      - ./mobility_simulator:/shared:ro
+    restart: unless-stopped
